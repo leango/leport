@@ -1,0 +1,24 @@
+@title-color: #848484;
+@content-color: #BDBDBD;
+@foot-background-color: #FAFAFA;
+
+.FootNote {
+  padding: 25px 0 50px 0;
+}
+
+.Demo {
+  .ContentBlock {
+    text-align: left;
+    &:before {
+      content: "▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\A";
+      color: @title-color;
+      margin: 0 0 10px 5px;
+      display: block;
+    }
+    &:after {
+      content: "▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\A▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\A▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\A▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\A▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\A";
+      white-space: pre;
+      color: @content-color;
+    }
+  }
+}
