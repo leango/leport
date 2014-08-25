@@ -1,0 +1,51 @@
+<% include head %>
+<div class="row">
+  <div class="col-xs-offset-2 col-xs-8">
+    <table class="table table-striped SkillTable">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>课程名称</th>
+          <th>技能</th>
+          <th>学习时间(分钟)</th>
+          <th>开始时间</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (courses.length === 0) { %>
+          <tr>
+            <td colspan="5">没有课程学习记录</td>
+          </tr>
+        <% } else { %>
+          <% courses.forEach(function(course, index) { %>
+          <tr>
+            <td><%=index%></td>
+            <td><%=course.title%></td>
+            <td><%=course.skill%></td>
+            <td>
+              <div class="progress SkillProgress">
+                <div class="progress-bar" role="progressbar" style="width:<%- Math.floor(course.duration / 45 * 100) %>%">
+                  <%- course.duration %>
+                </div>
+              </div>
+            </td>
+            <td>
+              <%-course.createdAt.getMonth()+1%>/<%-course.createdAt.getDate()%> <%-course.createdAt.getHours()%>:<%-course.createdAt.getMinutes()%> <%-course.createdAt.getHours() < 12 ? "AM" : "PM"%> 
+            </td>
+          </tr>
+          <% }); %>
+        <% } %>
+      </tbody>
+    </table>
+    <hr>
+    <ul class="pager">
+      <% if (page > 1) { %>
+      <li><a href="/timeline?p=<%-page-1%>">上一页</a></li>
+      <% } %>
+      <% if (courses.length === 7 ) { %>
+      <li><a href="/timeline?p=<%-1*page+1%>">下一页</a></li>
+      <% } %>
+    </ul>
+  </div>
+</div>
+<% include foot %>
