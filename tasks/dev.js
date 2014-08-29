@@ -3,10 +3,7 @@ var nodemon = require('gulp-nodemon');
 gulp.task('dev', ['build'], function() {
   nodemon({
     script: 'bin/www',
-    watch: ['src/less/app/index.less', 'routes/*.js'],
+    watch: ['web', 'web/css', 'web/js', './', 'web'],
     ignore: ['build/'],
-  }).on('change', 'build')
-    .on('restart', function() {
-      console.log('nodemon restart');
-    });
+  }).on('change', 'build');
 });

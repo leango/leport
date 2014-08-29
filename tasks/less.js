@@ -4,7 +4,7 @@ var rename = require('gulp-rename');
 var sourceMaps = require('gulp-sourcemaps');
 var less = require('gulp-less');
 gulp.task('less', function() {
-  gulp.src('src/less/**/index.less')
+  gulp.src('web/less/**/index.less')
     .pipe(sourceMaps.init())
     .pipe(less())
     .pipe(sourceMaps.write())
