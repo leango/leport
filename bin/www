@@ -1,4 +1,0 @@
-var app = require('../app.js');
-app.listen(app.get('port'), app.get('bindip'), function() {
-  console.log('Listening at %s:%s', app.get('bindip'), app.get('port'));
-});
