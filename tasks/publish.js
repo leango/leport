@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 gulp.task('publish', function() {
-  gulp.src('src/images/**')
+  gulp.src('web/images/**')
     .pipe(gulp.dest('build/images/'));
-  gulp.src('src/fonts/**')
+  gulp.src('web/fonts/**')
     .pipe(gulp.dest('build/fonts/'));
 });

@@ -8,7 +8,7 @@ var source = require('vinyl-source-stream');
 gulp.task('browserify', function() {
   var Bundler = global.isWatching ? watchify : browserify;
   var bundle = function() {
-    globule.find(path.join(__dirname, '../src/js/**/index.js')).forEach(function(fp) {
+    globule.find(path.join(__dirname, '../web/js/**/index.js')).forEach(function(fp) {
       var entryName = path.basename(path.dirname(fp));
       Bundler({
         entries: [fp],

@@ -3,7 +3,7 @@ var nodemon = require('gulp-nodemon');
 gulp.task('dev', ['build'], function() {
   nodemon({
     script: 'bin/www',
-    watch: ['src', 'src/css', 'src/js', './', 'lib'],
-    ignore: ['build/'],
+    watch: ['web', 'web/css', 'web/js', './', 'web'],
+    ignore: ['build/']
   }).on('change', 'build');
 });
